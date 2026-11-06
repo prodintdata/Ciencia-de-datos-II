@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.vscode/
+*.py[cod]
+# Fashion-MNIST no se versiona: Keras lo descarga en ~/.keras/datasets
+# models/ y reports/ sí se versionan: la app necesita models/decoder.keras y reports/ es la evidencia
