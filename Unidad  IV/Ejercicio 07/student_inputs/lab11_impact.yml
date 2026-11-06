@@ -1,0 +1,9 @@
+purpose: Priorizar casos territoriales sintéticos para revisión humana; solo recomienda un orden, no decide.
+assisted_decision: Orden en que el analista revisa la cola de casos; la decisión final siempre es humana.
+users: Analistas territoriales capacitados y su supervisor.
+affected_population: Personas y hogares de las zonas cuyos casos entran en la cola, en especial grupos protegidos y personas de 60+.
+owner: Dirección de Gestión de Riesgo Territorial.
+non_predictive_alternative: Revisión por orden de llegada (FIFO) con reglas simples y públicas, sin modelo.
+out_of_scope_use: Intervención automática, decidir elegibilidad, declarar emergencias o perfilar personas reales.
+withdrawal_condition: Suspender si el recall baja de 0.68, si la brecha entre grupos supera 0.16 o si se detecta un uso indebido o un daño.
+appeal_mechanism: La persona afectada puede pedir revisión humana a un supervisor independiente, que responde en 10 días hábiles.
