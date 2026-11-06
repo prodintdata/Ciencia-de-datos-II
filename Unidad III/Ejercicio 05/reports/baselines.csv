@@ -1,0 +1,5 @@
+method,rmse,hit_rate_at_10,precision_at_10,catalog_coverage,distinct_genres
+Media global (ratings),1.1156660882916472,,,,
+Media por película (ratings),1.0502612591083604,,,,
+"Popularidad (cantidad, media)",,0.04258943781942078,0.004258943781942078,0.012163694464488197,11.638841567291312
+Contenido puro (perfil de géneros),,0.0017035775127768314,0.00017035775127768315,0.07782702814142872,5.9710391822827935

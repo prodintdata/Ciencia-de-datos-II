@@ -1,0 +1,31 @@
+profile,userId,rank,movieId,title,genres,collaborative,content,hybrid,source
+wide,414,1,1203,12 Angry Men (1957),Drama,1.0,0.82,0.91,híbrido personalizado
+wide,414,2,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama|Romance|War,0.85,0.724,0.787,híbrido personalizado
+wide,414,3,898,"Philadelphia Story, The (1940)",Comedy|Drama|Romance,0.494,0.944,0.719,híbrido personalizado
+wide,414,4,92259,Intouchables (2011),Comedy|Drama,0.348,1.0,0.674,híbrido personalizado
+wide,414,5,1244,Manhattan (1979),Comedy|Drama|Romance,0.345,0.944,0.645,híbrido personalizado
+wide,414,6,7037,High Heels (Tacones lejanos) (1991),Comedy|Drama,0.21,1.0,0.605,híbrido personalizado
+wide,414,7,1230,Annie Hall (1977),Comedy|Romance,0.59,0.609,0.599,híbrido personalizado
+wide,414,8,926,All About Eve (1950),Drama,0.319,0.82,0.569,híbrido personalizado
+wide,414,9,44555,"Lives of Others, The (Das leben der Anderen) (2006)",Drama|Romance|Thriller,0.369,0.77,0.569,híbrido personalizado
+wide,414,10,1041,Secrets & Lies (1996),Drama,0.288,0.82,0.554,híbrido personalizado
+small,53,1,168,First Knight (1995),Action|Drama|Romance,0.947,0.849,0.898,híbrido personalizado
+small,53,2,356,Forrest Gump (1994),Comedy|Drama|Romance|War,1.0,0.727,0.863,híbrido personalizado
+small,53,3,6558,Curly Sue (1991),Comedy|Drama,0.635,0.923,0.779,híbrido personalizado
+small,53,4,141818,Ordinary Miracle (1978),Comedy|Drama|Fantasy|Romance,0.736,0.719,0.727,híbrido personalizado
+small,53,5,3731,Cutter's Way (1981),Drama|Thriller,0.828,0.604,0.716,híbrido personalizado
+small,53,6,1882,Godzilla (1998),Action|Sci-Fi|Thriller,0.986,0.42,0.703,híbrido personalizado
+small,53,7,317,"Santa Clause, The (1994)",Comedy|Drama|Fantasy,0.827,0.524,0.676,híbrido personalizado
+small,53,8,833,High School High (1996),Comedy,0.803,0.546,0.675,híbrido personalizado
+small,53,9,1916,Buffalo '66 (a.k.a. Buffalo 66) (1998),Drama|Romance,0.519,0.805,0.662,híbrido personalizado
+small,53,10,3308,"Flamingo Kid, The (1984)",Comedy|Drama,0.331,0.923,0.627,híbrido personalizado
+new,611,1,356,Forrest Gump (1994),Comedy|Drama|Romance|War,,,,fallback popularidad; no personalizada
+new,611,2,318,"Shawshank Redemption, The (1994)",Crime|Drama,,,,fallback popularidad; no personalizada
+new,611,3,296,Pulp Fiction (1994),Comedy|Crime|Drama|Thriller,,,,fallback popularidad; no personalizada
+new,611,4,2571,"Matrix, The (1999)",Action|Sci-Fi|Thriller,,,,fallback popularidad; no personalizada
+new,611,5,593,"Silence of the Lambs, The (1991)",Crime|Horror|Thriller,,,,fallback popularidad; no personalizada
+new,611,6,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Sci-Fi,,,,fallback popularidad; no personalizada
+new,611,7,110,Braveheart (1995),Action|Drama|War,,,,fallback popularidad; no personalizada
+new,611,8,480,Jurassic Park (1993),Action|Adventure|Sci-Fi|Thriller,,,,fallback popularidad; no personalizada
+new,611,9,589,Terminator 2: Judgment Day (1991),Action|Sci-Fi,,,,fallback popularidad; no personalizada
+new,611,10,2959,Fight Club (1999),Action|Crime|Drama|Thriller,,,,fallback popularidad; no personalizada

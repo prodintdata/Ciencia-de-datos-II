@@ -1,0 +1,13 @@
+{
+  "rmse": 1.0264183126391635,
+  "hit_rate_at_10": 0.03747870528109029,
+  "precision_at_10": 0.003747870528109029,
+  "catalog_coverage": 0.07751778167199258,
+  "train_seconds": 30.785251599998446,
+  "model_bytes": 1649760,
+  "factors": 20,
+  "epochs": 12,
+  "alpha": 0.75,
+  "seed": 42,
+  "cold_start_policy": "popularidad por cantidad y media; no personalizada"
+}

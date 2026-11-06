@@ -1,0 +1,34 @@
+{
+  "config": {
+    "factors": 40,
+    "epochs": 12,
+    "alpha": 0.5,
+    "seeds": [
+      42,
+      123,
+      2026
+    ]
+  },
+  "wide": {
+    "userId": 414,
+    "train_ratings": 2697,
+    "seen_in_list": 0,
+    "overlap_with_alpha_1": 4,
+    "overlap_with_alpha_0": 4,
+    "mean_jaccard_across_seeds": 0.5384615384615384
+  },
+  "small": {
+    "userId": 53,
+    "train_ratings": 19,
+    "seen_in_list": 0,
+    "overlap_with_alpha_1": 7,
+    "overlap_with_alpha_0": 4,
+    "mean_jaccard_across_seeds": 0.017543859649122806
+  },
+  "new": {
+    "userId": 611,
+    "train_ratings": 0,
+    "collaborative_rows": 0,
+    "fallback_items": 10
+  }
+}

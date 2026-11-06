@@ -1,0 +1,31 @@
+query,query_genres,movieId,title,genres,content_score,same_genres_as_query
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,103755,Turbo (2013),Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,4016,"Emperor's New Groove, The (2000)",Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,3754,"Adventures of Rocky and Bullwinkle, The (2000)",Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,3114,Toy Story 2 (1999),Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,91355,Asterix and the Vikings (Astérix et les Vikings) (2006),Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,2294,Antz (1998),Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,45074,"Wild, The (2006)",Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,53121,Shrek the Third (2007),Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,136016,The Good Dinosaur (2015),Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,4886,"Monsters, Inc. (2001)",Adventure|Animation|Children|Comedy|Fantasy,1.0,True
+"Godfather, The (1972)",Crime|Drama,8656,"Short Film About Killing, A (Krótki film o zabijaniu) (1988)",Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,63768,Tattooed Life (Irezumi ichidai) (1965),Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,62250,Gomorrah (Gomorra) (2008),Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,161127,The Infiltrator (2016),Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,60753,Felon (2008),Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,1466,Donnie Brasco (1997),Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,45210,United 93 (2006),Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,43912,Freedomland (2006),Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,44301,Lights in the Dusk (Laitakaupungin valot) (2006),Crime|Drama,1.0,True
+"Godfather, The (1972)",Crime|Drama,1227,Once Upon a Time in America (1984),Crime|Drama,1.0,True
+Alien (1979),Horror|Sci-Fi,2668,Swamp Thing (1982),Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,332,Village of the Damned (1995),Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,6656,Attack of the Puppet People (1958),Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,5979,Attack of the Crab Monsters (1957),Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,2428,"Faculty, The (1998)",Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,7984,From Beyond (1986),Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,84799,"Asphyx, The (1973)",Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,1862,Species II (1998),Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,1924,Plan 9 from Outer Space (1959),Horror|Sci-Fi,1.0,True
+Alien (1979),Horror|Sci-Fi,2901,Phantasm (1979),Horror|Sci-Fi,1.0,True
