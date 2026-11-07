@@ -7,7 +7,10 @@ Claude Code (Claude Opus 5.5, de Anthropic) en Visual Studio Code, octubre de 20
 - Instalé el entorno y ejecuté LAB11 en mi equipo (anexo de evidencias, E1–E3). Después ejecuté LAB12 con los comandos del README.
 - Completé y ajusté la ficha de impacto, los interesados, el registro de riesgos y la decisión de LAB12.
 - Ejecuté las pruebas y las validaciones, revisé las métricas por grupo y definí los criterios del análisis.
-- Integré el proyecto en el repositorio del curso e hice los commits y el push.
+- Dirigí y supervisé el trabajo de la IA: le indiqué qué hacer en cada paso, revisé lo que proponía y decidí qué se aceptaba.
+- En la revisión del trabajo decidí cómo incorporar las correcciones: mantener la alternativa elegida, presentar la comparación como exploratoria y no afirmar una mejora que la validación no confirma.
+- Revisé el informe y el anexo corregidos, pedí verificaciones adicionales hasta que no quedaran errores y aprobé la versión final.
+- Definí el repositorio de publicación, integré el proyecto en él e hice los commits y el push.
 
 ## Prompts relevantes
 - Explicar qué pide cada campo de LAB11 y por qué.
@@ -15,7 +18,7 @@ Claude Code (Claude Opus 5.5, de Anthropic) en Visual Studio Code, octubre de 20
 - Diagnosticar el error de `lab11_impact.py` y el fallo del push.
 - Proponer un análisis de mitigación con Fairlearn y sus pruebas.
 - Revisar el informe contra el mandato y la rúbrica.
-- Incorporar las correcciones del docente: subgrupo con menor recall, soporte por clase y validación de la alternativa elegida.
+- Incorporar correcciones: subgrupo con menor recall, soporte por clase y validación de la alternativa elegida.
 
 ## Apoyo recibido
 - Explicaciones de los requisitos.
@@ -33,7 +36,7 @@ Claude Code (Claude Opus 5.5, de Anthropic) en Visual Studio Code, octubre de 20
 1. El script base `lab11_impact.py` tenía un error de sintaxis: una cadena con saltos de línea reales. Se corrigió con `\n`.
 2. Matizamos la lectura «la logística cumple las brechas» con intervalos de confianza bootstrap.
 3. Medimos la alternativa sin modelo en lugar de solo enunciarla.
-4. Tras la retroalimentación del docente: se corrigió el subgrupo con menor recall (G1 · 30-44, no G1 · 45-59), el soporte se juzga con los positivos (recall) y los negativos (FPR) de cada subgrupo, la comparación de mitigaciones se presenta como exploratoria y la alternativa elegida se validó con periodos temporales anteriores al test. Esa validación no confirma la mejora, así que ya no se afirma que sustituir el modelo mejore el sistema.
+4. En una revisión posterior, con apoyo de la IA, se corrigió el subgrupo con menor recall (G1 · 30-44, no G1 · 45-59), el soporte se juzgó con los positivos (recall) y los negativos (FPR) de cada subgrupo, la comparación de mitigaciones se presentó como exploratoria y la alternativa elegida se validó con periodos temporales anteriores al test. Yo decidí que, como esa validación no confirma la mejora, el informe no debía afirmar que sustituir el modelo mejora el sistema.
 
 ## Responsabilidad
 Los valores del análisis son míos: el daño priorizado, las tolerancias, el soporte mínimo de 20 casos por clase y la decisión de modificar y limitar. Puedo explicar cada parte y asumo la responsabilidad de lo entregado.

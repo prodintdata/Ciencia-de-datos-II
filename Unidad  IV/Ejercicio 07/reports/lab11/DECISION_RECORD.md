@@ -48,7 +48,7 @@ Se suspende el sistema y se vuelve a la revisión FIFO con reglas explícitas si
 
 Quien decide la retirada es el propietario institucional.
 
-## Actualización tras LAB12 y E07 (2026-10-30; revisada el 2026-11-06 con la retroalimentación del docente)
+## Actualización tras LAB12 y E07 (2026-10-30; revisada el 2026-11-06)
 
 **Decisión final: MODIFICAR y LIMITAR.** La decisión REVIEW anterior se resuelve con nueva evidencia.
 
