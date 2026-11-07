@@ -39,7 +39,7 @@
     }
   },
   "training_seconds": {
-    "logistic": 0.12187820000690408,
-    "expgrad_tpr_parity": 1.39026179999928
+    "logistic": 0.058211299998220056,
+    "expgrad_tpr_parity": 0.40431330003775656
   }
 }

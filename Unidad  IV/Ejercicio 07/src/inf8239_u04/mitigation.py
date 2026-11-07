@@ -25,6 +25,23 @@ def fit_exponentiated_gradient(pipeline, X, y, sensitive, seed=42):
     eg.fit(Xt,y,sensitive_features=sensitive)
     return lambda Xnew: eg.predict(prep.transform(Xnew),random_state=seed)
 
+def rolling_origin_folds(n, first_train, fold_size):
+    # Expanding-window temporal folds over rows already sorted by date:
+    # each fold trains on everything before it and validates on the next block.
+    folds,start=[],first_train
+    while start+fold_size<=n:
+        folds.append((np.arange(0,start),np.arange(start,start+fold_size))); start+=fold_size
+    return folds
+
+def paired_bootstrap_diff(y_true, pred_a, pred_b, sensitive, metric, n=1000, seed=42):
+    # 95 % interval of metric(b) - metric(a) resampling the same cases for both variants.
+    y,a,b,s=map(np.asarray,(y_true,pred_a,pred_b,sensitive)); rng=np.random.default_rng(seed); diffs=[]
+    for _ in range(n):
+        i=rng.integers(0,len(y),len(y))
+        diffs.append(summarize("b",y[i],b[i],s[i])[metric]-summarize("a",y[i],a[i],s[i])[metric])
+    d=pd.Series(diffs)
+    return {"p2.5":float(d.quantile(.025)),"p50":float(d.median()),"p97.5":float(d.quantile(.975)),"share_below_0":float((d<0).mean())}
+
 def bootstrap_gaps(y_true, pred, sensitive, n=1000, seed=42):
     y,p,s=np.asarray(y_true),np.asarray(pred),np.asarray(sensitive); rng=np.random.default_rng(seed); rows=[]
     for _ in range(n):

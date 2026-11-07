@@ -42,23 +42,25 @@ El baseline detecta todos los positivos, pero marca a todos los casos, así que 
 
 ## 4. Análisis interseccional (`protected_group` × `age_band`)
 
-**Soporte mínimo:** 20 observaciones. Es un criterio propio de este informe, porque el proyecto no fija uno. Los grupos con menos casos se muestran para no ocultarlos, pero no se interpretan.
+**Soporte por clase:** el soporte se juzga con el denominador de cada métrica, no con el n total del subgrupo. El recall se calcula sobre los positivos reales (n+) y la FPR sobre los negativos reales (n−). Se exigen al menos 20 casos en ese denominador; es un criterio propio de este informe, porque el proyecto no fija uno. Los subgrupos sin soporte se muestran para no ocultarlos, pero se leen solo como exploratorios. Los intervalos de Wilson al 95 % están en `reports/e07/support_by_class.csv`.
 
-| Grupo | n | Recall (log.) | FPR (log.) | Recall (árbol) | FPR (árbol) | ¿Se interpreta? |
-|---|---|---|---|---|---|---|
-| G1 · 18-29 | 18 | 0.750 | 0.143 | 0.750 | 0.214 | ⚠️ No (n < 20) |
-| G1 · 30-44 | 24 | 0.562 | 0.125 | 0.625 | 0.375 | Sí |
-| G1 · 45-59 | 35 | **0.588** | 0.389 | 0.647 | 0.278 | Sí |
-| G1 · 60+ | 24 | 0.833 | 0.250 | 0.583 | 0.250 | Sí |
-| G2 · 18-29 | 11 | 0.875 | 0.000 | 1.000 | 0.000 | ⚠️ No (n < 20) |
-| G2 · 30-44 | 14 | 0.667 | 0.500 | 0.833 | 1.000 | ⚠️ No (n < 20) |
-| G2 · 45-59 | 8 | 1.000 | 0.000 | 0.667 | 0.000 | ⚠️ No (n < 20) |
-| G2 · 60+ | 26 | 0.765 | **0.556** | 0.765 | 0.556 | Sí |
+| Grupo | n | n+ | n− | Recall (log.) | FPR (log.) | Recall (árbol) | FPR (árbol) | ¿Recall con soporte? (n+ ≥ 20) | ¿FPR con soporte? (n− ≥ 20) |
+|---|---|---|---|---|---|---|---|---|---|
+| G1 · 18-29 | 18 | 4 | 14 | 0.750 | 0.143 | 0.750 | 0.214 | No | No |
+| G1 · 30-44 | 24 | 16 | 8 | **0.562** (9/16) | 0.125 | 0.625 | 0.375 | No | No |
+| G1 · 45-59 | 35 | 17 | 18 | 0.588 (10/17) | 0.389 | 0.647 | 0.278 | No | No |
+| G1 · 60+ | 24 | 12 | 12 | 0.833 | 0.250 | 0.583 | 0.250 | No | No |
+| G2 · 18-29 | 11 | 8 | 3 | 0.875 | 0.000 | 1.000 | 0.000 | No | No |
+| G2 · 30-44 | 14 | 12 | 2 | 0.667 | 0.500 | 0.833 | 1.000 | No | No |
+| G2 · 45-59 | 8 | 6 | 2 | 1.000 | 0.000 | 0.667 | 0.000 | No | No |
+| G2 · 60+ | 26 | 17 | 9 | 0.765 | 0.556 (5/9) | 0.765 | 0.556 | No | No |
 
-**Hallazgos con soporte suficiente:**
-- **G1 · 30-44 y G1 · 45-59** tienen el recall más bajo con la logística (0.56–0.59). Ahí se concentra el daño priorizado: casos reales que no se detectan.
-- **G2 · 60+** tiene una FPR de 0.556 en ambos modelos: más de la mitad de los casos negativos recibe una alerta falsa. Esto genera carga de revisión y podría llevar a un trato desigual hacia personas mayores.
-- Con n de 24 a 35, una sola observación mueve el recall entre 4 y 8 puntos. Estas cifras indican dónde investigar; no son estimaciones firmes.
+A nivel de grupo, G1 tiene 49 positivos y 52 negativos, y G2 tiene 43 positivos y 16 negativos. El recall de ambos grupos tiene soporte, pero la FPR de G2 se apoya en solo 16 negativos.
+
+**Hallazgos (exploratorios):**
+- **G1 · 30-44** tiene el recall más bajo con la logística: 0.562 (9 de 16 positivos), seguido de G1 · 45-59 con 0.588 (10 de 17). Ahí se concentra el daño priorizado: casos reales que no se detectan.
+- **G2 · 60+** tiene una FPR de 0.556 en ambos modelos, pero son 5 de 9 negativos. Es una señal para investigar, no una estimación firme.
+- Ningún subgrupo interseccional llega a 20 positivos ni a 20 negativos. Con 16 o 17 positivos, un solo caso mueve el recall unos 6 puntos, y el intervalo de Wilson de G1 · 30-44 va de 0.332 a 0.769. Estas cifras indican dónde investigar; no permiten ordenar los subgrupos con seguridad.
 
 ## 5. Costo computacional (Green AI)
 
@@ -81,18 +83,18 @@ El baseline detecta todos los positivos, pero marca a todos los casos, así que 
 | Interpretabilidad | Coeficientes explicables | Reglas explicables pero menos estables |
 
 **Recomendación: REVIEW.** La regresión logística puede usarse en un piloto con revisión humana obligatoria, sin automatizar decisiones. Para pasar a GO se requiere:
-1. Investigar el bajo recall de G1, sobre todo de G1 · 45-59: revisar los datos, las variables proxy y el umbral de decisión.
-2. Revisar el exceso de alertas falsas en G2 · 60+.
-3. Conseguir más datos o calcular intervalos de confianza (bootstrap) antes de comparar los grupos pequeños.
+1. Investigar el bajo recall de G1, sobre todo de G1 · 30-44 (0.562) y G1 · 45-59 (0.588): revisar los datos, las variables proxy y el umbral de decisión.
+2. Revisar el exceso de alertas falsas en G2 · 60+ (5 de 9 negativos).
+3. Conseguir más datos, hasta tener al menos 20 positivos y 20 negativos por subgrupo, antes de comparar los grupos pequeños.
 4. Mantener como respaldo la alternativa no predictiva (FIFO con reglas explícitas) definida en LAB11.
 
-**Acción humana:** el analista revisa todos los casos que el modelo pone en la parte alta de la cola. El supervisor revisa cada mes el recall de G1 y la FPR de G2 · 60+. Si se supera la tolerancia, se aplica la condición de retiro de LAB11.
+**Acción humana:** el analista revisa todos los casos que el modelo pone en la parte alta de la cola. El supervisor revisa cada mes el recall de G1, el de G1 · 30-44 y G1 · 45-59, y la FPR de G2 · 60+, junto con el número de positivos y negativos de cada uno. Si se supera la tolerancia, se aplica la condición de retiro de LAB11.
 
 ## 7. Por qué una brecha no prueba discriminación causal
 
 Una brecha observada es una **señal que requiere investigación**, no una prueba de discriminación:
 - **Prevalencias distintas:** G1 tiene 49 % de positivos y G2 73 %. Parte de la diferencia en la tasa de selección y la FPR viene de esa distribución, no necesariamente de un trato injusto del modelo.
-- **Tamaño de muestra:** con 59 casos en G2 y grupos interseccionales de 8 a 35, las brechas tienen mucha variación aleatoria y no se calcularon intervalos.
+- **Tamaño de muestra:** G2 tiene 59 casos pero solo 16 negativos, y los subgrupos interseccionales tienen de 4 a 17 positivos y de 2 a 18 negativos. Las brechas tienen mucha variación aleatoria y los intervalos son amplios (`reports/e07/`).
 - **Variables proxy:** el modelo no usa `protected_group`, pero puede reproducir diferencias a través de `zone` o `age_band`. Confirmarlo exige analizar los datos y el proceso que los generó.
 - **Causalidad:** Fairlearn mide asociaciones entre grupos y errores. Para afirmar una causa se necesitaría conocer cómo se generó la etiqueta y qué ocurriría con otro umbral u otros datos.
 
