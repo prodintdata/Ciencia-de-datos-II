@@ -1,0 +1,10 @@
+artifact,location,contains_personal_data,retention,disposal,owner,accountable
+Dataset del piloto (entrenamiento y prueba),data/territorial_risk_synthetic.csv,"no (sintético); con datos reales, sí",Mientras dure el piloto y 12 meses tras el retiro,Borrado seguro; se conservan solo métricas agregadas,Ingeniero de datos,Líder del equipo de datos
+Puntajes y prioridad por caso,registro de predicciones (fuera del repositorio),sí con datos reales,12 meses o hasta cerrar la última apelación del caso (lo que ocurra después),Borrado seguro,Ingeniero de ML,Líder del equipo de datos
+Modelo serializado,models/*.joblib (excluido de git),no,Versión vigente y las 2 anteriores para rollback,Borrado del artefacto; el commit permite reproducirlo,Ingeniero de ML,Líder del equipo de datos
+Decisión de despliegue y reportes de equidad,reports/lab13/; reports/lab12/; reports/e07/,no (agregados),Vida del sistema y 3 años después del retiro,Archivo de solo lectura,Científico de datos,Dirección de Gestión de Riesgo Territorial
+Reportes de monitoreo,reports/e08/monitoring_*.csv,no (agregados por mes y grupo),Vida del sistema y 3 años después del retiro,Archivo de solo lectura,Ingeniero de ML,Líder del equipo de datos
+Evidencia de incidentes,reports/e08/incident_drill/,no (agregados y hashes; sin filas de casos),3 años desde el cierre del postmortem,Archivo de solo lectura; luego borrado,Científico de datos,Dirección de Gestión de Riesgo Territorial
+Registro de casos revisados,sistema de casos (fuera del repositorio),sí con datos reales,24 meses,Borrado seguro,Supervisor de analistas,Supervisor de analistas
+Registro de accesos,sistema de casos (fuera del repositorio),sí (usuarios internos),12 meses,Borrado seguro,Ingeniero de ML,Líder del equipo de datos
+Bitácora de apelaciones,sistema de apelaciones (fuera del repositorio),sí con datos reales,24 meses tras la resolución,Borrado seguro,Supervisor independiente de apelaciones,Dirección de Gestión de Riesgo Territorial

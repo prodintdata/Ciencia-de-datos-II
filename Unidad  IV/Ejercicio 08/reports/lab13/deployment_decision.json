@@ -1,0 +1,68 @@
+{
+  "metrics": {
+    "accuracy": 0.71875,
+    "recall": 0.717391304347826
+  },
+  "gaps": {
+    "recall_gap": 0.13763644992880875,
+    "fpr_gap": 0.125
+  },
+  "resources": {
+    "training_seconds": 0.043558600009419024,
+    "model_kb": 3.5634765625,
+    "latency_ms": 0.029316875225049444
+  },
+  "decision": {
+    "status": "GO",
+    "checks": {
+      "recall": true,
+      "recall_gap": true,
+      "fpr_gap": true,
+      "latency": true,
+      "model_size": true
+    },
+    "failed": [],
+    "human_action": "Document review and final decision"
+  },
+  "recommendation": {
+    "status": "GO",
+    "model_version": "logistic-sklearn1.9.1-unversioned",
+    "policy": {
+      "system": "Territorial Review DSS - Synthetic",
+      "purpose": "Prioritize synthetic cases for human review",
+      "prohibited_uses": [
+        "automatic intervention",
+        "eligibility decision",
+        "emergency declaration",
+        "profiling of real people",
+        "use without human review of every case"
+      ],
+      "gates": {
+        "min_recall": 0.68,
+        "max_recall_gap": 0.16,
+        "max_fpr_gap": 0.16,
+        "max_latency_ms": 500,
+        "max_model_kb": 1024
+      }
+    },
+    "evidence": {
+      "checks": {
+        "recall": true,
+        "recall_gap": true,
+        "fpr_gap": true,
+        "latency": true,
+        "model_size": true
+      },
+      "failed": [],
+      "files": [
+        "reports/lab13/deployment_decision.json",
+        "reports/lab13/fairness_by_group.csv",
+        "docs/MODEL_CARD.md",
+        "docs/RUNBOOK.md",
+        "student_inputs/raci.csv"
+      ]
+    },
+    "authority_limit": "El DSS prioriza revisión y presenta evidencia; no declara emergencias, culpabilidad, elegibilidad ni intervención automática.",
+    "human_action": "El analista revisa cada caso priorizado y registra su decisión; la Dirección firma el despliegue."
+  }
+}

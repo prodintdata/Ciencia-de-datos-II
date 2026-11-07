@@ -1,0 +1,7 @@
+month,signal,level,detail
+2026-09,support,info,n=6; mes no interpretable
+2026-10,recall,high,recall=0.643
+2026-10,support,info,"n_G1=35, n_G2=19; brechas no interpretables"
+2026-11,recall_gap,high,gap=0.175
+2026-11,recall_G1,medium,recall_G1=0.625
+2026-12,support,info,"n_G1=30, n_G2=16; brechas no interpretables"

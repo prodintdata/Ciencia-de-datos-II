@@ -1,0 +1,56 @@
+$ uv run pytest -q -p no:cacheprovider
+.................................                                        [100%]
+33 passed in 11.50s
+
+$ uv run python scripts/check_environment.py
+{'python_project': 'ok', 'dataset_status': 'valid', 'rows': 640, 'columns': 9}
+
+$ uv run python scripts/lab13_governance.py
+{'status': 'GO', 'checks': {'recall': True, 'recall_gap': True, 'fpr_gap': True, 'latency': True, 'model_size': True}, 'failed': [], 'human_action': 'Document review and final decision'}
+
+$ uv run python scripts/e08_monitoring.py
+  month  n  recall   fpr  n_G1  recall_G1  fpr_G1  pos_G1  neg_G1  n_G2  recall_G2  fpr_G2  pos_G2  neg_G2  support_ok  recall_gap  fpr_gap
+2026-09  6   0.750 0.500     3      1.000   0.500       1       2     3      0.667     NaN       3       0       False       0.333      NaN
+2026-10 54   0.643 0.231    35      0.643   0.238      14      21    19      0.643   0.200      14       5       False       0.000    0.038
+2026-11 54   0.710 0.304    33      0.625   0.294      16      17    21      0.800   0.333      15       6        True       0.175    0.039
+2026-12 46   0.793 0.294    30      0.667   0.167      18      12    16      1.000   0.600      11       5       False       0.333    0.433
+             feature   psi
+                zone 0.015
+            age_band 0.038
+  previous_incidents 0.084
+infrastructure_score 0.067
+            exposure 0.031
+  month     signal  level                                      detail
+2026-09    support   info                   n=6; mes no interpretable
+2026-10     recall   high                                recall=0.643
+2026-10    support   info n_G1=35, n_G2=19; brechas no interpretables
+2026-11 recall_gap   high                                   gap=0.175
+2026-11  recall_G1 medium                             recall_G1=0.625
+2026-12    support   info n_G1=30, n_G2=16; brechas no interpretables
+ExponentiatedGradient (variante candidata)
+  month  n  recall   fpr  n_G1  recall_G1  fpr_G1  pos_G1  neg_G1  n_G2  recall_G2  fpr_G2  pos_G2  neg_G2  support_ok  recall_gap  fpr_gap
+2026-09  6   0.750 0.500     3      1.000   0.500       1       2     3      0.667     NaN       3       0       False       0.333      NaN
+2026-10 54   0.679 0.154    35      0.714   0.143      14      21    19      0.643   0.200      14       5       False       0.071    0.057
+2026-11 54   0.710 0.304    33      0.688   0.353      16      17    21      0.733   0.167      15       6        True       0.046    0.186
+2026-12 46   0.793 0.235    30      0.722   0.083      18      12    16      0.909   0.600      11       5       False       0.187    0.517
+  month  signal level                                      detail
+2026-09 support  info                   n=6; mes no interpretable
+2026-10  recall  high                                recall=0.679
+2026-10 support  info n_G1=35, n_G2=19; brechas no interpretables
+2026-11 fpr_gap  high                                   gap=0.186
+2026-12 support  info n_G1=30, n_G2=16; brechas no interpretables
+Brecha de FPR de noviembre (EG): {"fpr_gap": 0.1863, "fpr": {"G1": {"false_positives": 6, "negatives": 17, "value": 0.3529}, "G2": {"false_positives": 1, "negatives": 6, "value": 0.1667}}, "bootstrap": {"resamples": 1000, "seed": 42, "valid": 997, "ci95": [0.0147, 0.5333], "share_above_limit": 0.66}, "status": {"logistic_base": {"status": "REVIEW", "failed": ["recall@2026-10", "recall_gap@2026-11"]}, "expgrad_tpr_parity": {"status": "REVIEW", "failed": ["recall@2026-10", "fpr_gap@2026-11"]}}}
+
+$ uv run python scripts/e08_incident_drill.py
+[baseline] decisión GO con el lote correcto
+[contrato] lote con columna email rechazado: Direct identifiers prohibited: ['email']
+[detección sin etiquetas] PSI previous_incidents global = 0.194; por zona = {'Este': 0.0957, 'Norte': 0.2736, 'Oeste': 8.2246, 'Sur': 0.3774} (acción >= 0.25)
+[detección con etiquetas] decisión REVIEW; puertas fallidas ['recall', 'recall_gap']
+[contención] sistema en REVIEW, cola en FIFO, lote en cuarentena
+[evidencia] configuración, RACI, decisiones y perfil agregado del lote preservados
+[recuperación] lote corregido: decisión GO; reactivación pendiente de firma de la Dirección
+reports\e08\incident_drill\manifest.json
+
+$ uv run python scripts/simulate_incident.py
+reports\lab13\INCIDENT_POSTMORTEM.md already completed; not overwritten
+

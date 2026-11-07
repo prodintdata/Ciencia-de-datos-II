@@ -1,0 +1,55 @@
+{
+  "scenario": "previous_incidents = 0 en la zona Oeste por fallo de ingesta",
+  "contract_check": "rechazado: Direct identifiers prohibited: ['email']",
+  "psi_previous_incidents": 0.1944,
+  "psi_previous_incidents_by_zone": {
+    "Este": 0.0957,
+    "Norte": 0.2736,
+    "Oeste": 8.2246,
+    "Sur": 0.3774
+  },
+  "timeline": [
+    {
+      "at": "2026-11-07T00:35:04+00:00",
+      "step": "baseline",
+      "owner": "Ingeniero de ML",
+      "detail": "decisión GO con el lote correcto"
+    },
+    {
+      "at": "2026-11-07T00:35:04+00:00",
+      "step": "contrato",
+      "owner": "Ingeniero de datos",
+      "detail": "lote con columna email rechazado: Direct identifiers prohibited: ['email']"
+    },
+    {
+      "at": "2026-11-07T00:35:04+00:00",
+      "step": "detección sin etiquetas",
+      "owner": "Ingeniero de ML",
+      "detail": "PSI previous_incidents global = 0.194; por zona = {'Este': 0.0957, 'Norte': 0.2736, 'Oeste': 8.2246, 'Sur': 0.3774} (acción >= 0.25)"
+    },
+    {
+      "at": "2026-11-07T00:35:04+00:00",
+      "step": "detección con etiquetas",
+      "owner": "Ingeniero de ML",
+      "detail": "decisión REVIEW; puertas fallidas ['recall', 'recall_gap']"
+    },
+    {
+      "at": "2026-11-07T00:35:04+00:00",
+      "step": "contención",
+      "owner": "Ingeniero de ML; Científico de datos",
+      "detail": "sistema en REVIEW, cola en FIFO, lote en cuarentena"
+    },
+    {
+      "at": "2026-11-07T00:35:04+00:00",
+      "step": "evidencia",
+      "owner": "Científico de datos",
+      "detail": "configuración, RACI, decisiones y perfil agregado del lote preservados"
+    },
+    {
+      "at": "2026-11-07T00:35:04+00:00",
+      "step": "recuperación",
+      "owner": "Ingeniero de datos",
+      "detail": "lote corregido: decisión GO; reactivación pendiente de firma de la Dirección"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-11-07T00:35:04+00:00",
+  "model_version": "logistic-sklearn1.9.1-unversioned",
+  "model_sha256": "74db9fc35677e384282d51b588367adcc79995ee5ce802b953adcd13fa94be8b",
+  "files": {
+    "batch_profile.csv": "ab343d1b7f99c839464cf37ea33c44868457db61d8d7f89ab17daf127eb2b092",
+    "decision_baseline.json": "3d9c689df27de3b983cf9c779aa9355faf579bfbee25390b5b124a58e07fa83b",
+    "decision_incident.json": "8ad22bc9ff1cfd223082ddf017c26d5df3701c2a327438049171e82c1e6e9c40",
+    "decision_recovered.json": "3d9c689df27de3b983cf9c779aa9355faf579bfbee25390b5b124a58e07fa83b",
+    "fairness_incident.csv": "51ddf331fe14bd40923c98be7557af59c375c2bd49c7b0aa2348d0ceb5ce1a87",
+    "governance.yml": "f9b120361efd245a3293845b68d33475a7b226848e1557d2c171e0f4e524619c",
+    "monitoring.yml": "928f1da78db7ac761f8bdba18e9f34f0bb427ba66c1f250b04892ee085fa713c",
+    "raci.csv": "fa80218a2a7a212f75b0eed9a10dac1cc5ddcae5d2921226cf327b080d400c20",
+    "timeline.json": "ad1c6d35661874ea8af34f0d95a116ddbcdd2e0c1cff9119d7d9147ed61565e7"
+  }
+}

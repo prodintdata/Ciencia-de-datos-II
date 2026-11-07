@@ -1,0 +1,53 @@
+# Plan de monitoreo del piloto (E08). Los umbrales de desempeño y equidad son los de configs/governance.yml.
+# Responsables tomados de student_inputs/raci.csv ("Despliegue y monitoreo de métricas y brechas").
+min_support: 20          # soporte mínimo por grupo para interpretar una brecha (LAB12)
+thresholds:
+  min_recall: 0.68
+  max_recall_gap: 0.16
+  max_fpr_gap: 0.16
+  watch_recall_G1: 0.68  # vigilancia reforzada aunque la brecha esté dentro de la tolerancia
+  psi_watch: 0.10        # convención de la industria: 0.10-0.25 cambio moderado
+  psi_action: 0.25       # >= 0.25 cambio importante: abrir incidente
+signals:
+  - name: Contrato de datos (columnas faltantes o identificadores directos)
+    when: cada lote, antes de predecir
+    needs_labels: false
+    owner: Ingeniero de datos
+    accountable: Líder del equipo de datos
+    action: rechazar el lote; no se predice
+  - name: Deriva de variables (PSI frente al entrenamiento)
+    when: cada lote y resumen mensual
+    needs_labels: false
+    owner: Ingeniero de ML
+    accountable: Líder del equipo de datos
+    action: PSI >= 0.25 abre incidente de clase alta y pasa a REVIEW
+  - name: Recall global y brechas de recall y FPR por grupo
+    when: mensual, cuando los casos revisados tienen resultado
+    needs_labels: true
+    owner: Ingeniero de ML
+    accountable: Líder del equipo de datos
+    action: puerta fallida = REVIEW y runbook
+  - name: Recall de G1 y FPR de G2 · 60+
+    when: mensual
+    needs_labels: true
+    owner: Científico de datos
+    accountable: Supervisor de analistas
+    action: vigilancia reforzada; informe a la Dirección
+  - name: Casos cerrados sin revisión registrada (sesgo de automatización, R02)
+    when: semanal
+    needs_labels: false
+    owner: Supervisor de analistas
+    accountable: Supervisor de analistas
+    action: reentrenar al analista; si persiste, incidente de clase media
+  - name: Latencia y disponibilidad
+    when: continuo
+    needs_labels: false
+    owner: Ingeniero de ML
+    accountable: Líder del equipo de datos
+    action: latencia > 500 ms o caída = operar con FIFO
+  - name: Apelaciones recibidas y tiempo de respuesta
+    when: mensual
+    needs_labels: false
+    owner: Supervisor independiente de apelaciones
+    accountable: Dirección de Gestión de Riesgo Territorial
+    action: respuesta > 10 días hábiles o daño confirmado = incidente

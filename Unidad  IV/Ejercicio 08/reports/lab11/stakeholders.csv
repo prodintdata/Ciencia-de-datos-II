@@ -1,0 +1,5 @@
+stakeholder,benefit,harm,power,participation
+Affected person,Su caso se revisa más rápido si es urgente,Quedar mal priorizado o sufrir trato desigual por su grupo o edad,low,Derecho a apelación y aviso de que se usa un sistema de apoyo
+Operator,Organiza mejor su carga de trabajo,Confiar de más en el puntaje y perder criterio propio,medium,Capacitación y reporte de errores o casos dudosos
+Institutional owner,Usa mejor los recursos de revisión,Responsabilidad legal y reputacional si el sistema causa daño,high,Aprueba el uso y decide continuar o retirar el sistema
+Data team,Mejora el modelo con evidencia,Sesgos o errores técnicos no detectados,medium,Auditorías periódicas y reporte de métricas al propietario

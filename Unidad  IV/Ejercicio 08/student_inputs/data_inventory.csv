@@ -1,0 +1,14 @@
+field,status,type,category,used_in_model,used_in_audit,purpose,minimization,retention,access
+case_id,collected,texto (CASE-0001),identificador técnico seudónimo,no,no,Trazabilidad del caso y apelación,Código interno sin significado; no se deriva de datos personales,Mientras el caso esté abierto y 24 meses tras cerrar la apelación,Analistas territoriales; Supervisor independiente de apelaciones
+received_date,collected,fecha,operativo temporal,no,no,Corte temporal y monitoreo mensual,Se agrega a mes en los reportes de monitoreo,Igual que el dataset del piloto,Equipo de datos
+zone,collected,categórica (4 zonas amplias),cuasi-identificador geográfico,sí,no,Predicción del riesgo territorial,Solo 4 zonas amplias; no se recolectan dirección ni coordenadas; vigilada como posible proxy,Igual que el dataset del piloto,Equipo de datos; Analistas territoriales
+protected_group,collected,categórica (G1/G2),sensible,no,sí,Auditoría de equidad por grupo,Excluida del modelo; acceso restringido al equipo de auditoría,Igual que el dataset del piloto; se elimina con él,Científico de datos; Líder del equipo de datos
+age_band,collected,categórica (4 tramos),sensible generalizado,sí,sí,Predicción y auditoría interseccional,Tramos de edad en lugar de fecha de nacimiento,Igual que el dataset del piloto,Equipo de datos
+previous_incidents,collected,entero,operativo,sí,no,Predicción del riesgo,Solo el conteo; no el detalle de cada incidente,Igual que el dataset del piloto,Equipo de datos; Analistas territoriales
+infrastructure_score,collected,real 0-1,operativo territorial,sí,no,Predicción del riesgo,Índice agregado de la zona; no describe a la persona,Igual que el dataset del piloto,Equipo de datos; Analistas territoriales
+exposure,collected,real 0-1,operativo territorial,sí,no,Predicción del riesgo,Índice agregado; no describe a la persona,Igual que el dataset del piloto,Equipo de datos; Analistas territoriales
+target,collected,binaria 0/1,etiqueta,no,sí,Entrenamiento y evaluación,Resultado de la revisión humana; no se usa para predecir,Igual que el dataset del piloto,Equipo de datos
+name,prohibited,—,identificador directo,no,no,Ninguna,No se recolecta; el contrato rechaza el lote,No aplica,Nadie
+document_number,prohibited,—,identificador directo,no,no,Ninguna,No se recolecta; el contrato rechaza el lote,No aplica,Nadie
+email,prohibited,—,identificador directo,no,no,Ninguna,No se recolecta; el contrato rechaza el lote,No aplica,Nadie
+phone,prohibited,—,identificador directo,no,no,Ninguna,No se recolecta; el contrato rechaza el lote,No aplica,Nadie

@@ -1,0 +1,22 @@
+system_name: Territorial Review DSS - Synthetic
+purpose: Prioritize synthetic cases for human review
+# Alineados con out_of_scope_use de student_inputs/lab11_impact.yml
+prohibited_uses:
+  - automatic intervention
+  - eligibility decision
+  - emergency declaration
+  - profiling of real people
+  - use without human review of every case
+sensitive_features: [protected_group, age_band]
+# Deben coincidir con PROHIBITED en src/inf8239_u04/data.py (test_privacy)
+direct_identifiers: [name, document_number, email, phone]
+gates:
+  # Desempeño: condición de retiro de LAB11 (recall < 0.68)
+  min_recall: 0.68
+  # Equidad: tolerancia de LAB12; recall es la métrica primaria y FPR la secundaria
+  max_recall_gap: 0.16
+  max_fpr_gap: 0.16
+  # Latencia por caso: la cola se revisa por personas, no requiere tiempo real
+  max_latency_ms: 500
+  # Costo: tamaño del artefacto como aproximación de costo de despliegue
+  max_model_kb: 1024

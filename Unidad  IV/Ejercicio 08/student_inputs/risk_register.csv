@@ -1,0 +1,9 @@
+id,scenario,affected,likelihood_1_4,impact_1_4,control,owner,evidence,residual
+R01,El modelo prioriza peor a un grupo protegido o a personas de 60+ (sesgo por subgrupo),Personas de grupos protegidos y mayores de 60,2,4,Auditoría de recall y FPR por subgrupo con brecha máxima de 0.16,Equipo de datos,Reporte de equidad de LAB12,high
+R02,El analista acepta el puntaje sin revisar el caso (sesgo de automatización),Personas afectadas y operador,3,3,Capacitación y revisión obligatoria del caso antes de cerrarlo,Supervisor de analistas,Registro de casos revisados y bitácora de capacitación,medium
+R03,Los datos cambian con el tiempo y el modelo pierde precisión (drift),Personas afectadas,2,3,Validación temporal y monitoreo mensual del recall,Equipo de datos,Métricas de monitoreo por mes,medium
+R04,Reidentificación de personas o filtración de datos sensibles,Personas afectadas,1,4,Prohibir identificadores directos y restringir el acceso por rol,Equipo de datos,Validación de esquema y prueba test_privacy,medium
+R05,El sistema responde lento o se cae y retrasa la revisión,Operador,2,2,Latencia máxima de 500 ms y respaldo con orden FIFO,Equipo de datos,Prueba de latencia y runbook,low
+R06,El operador no entiende por qué un caso tiene prioridad alta,Operador y personas afectadas,3,2,Mostrar la explicación del puntaje en el tablero,Equipo de datos,Capturas del tablero y encuesta a operadores,medium
+R07,El puntaje se usa para decidir elegibilidad o intervención automática (uso fuera de alcance),Personas afectadas,2,4,Política de usos prohibidos y auditoría del uso real,Propietario institucional,Política firmada y registro de accesos,high
+R08,La persona afectada no conoce o no usa la vía de apelación,Personas afectadas,1,3,Aviso claro y formulario de apelación accesible,Propietario institucional,Bitácora de apelaciones y tiempos de respuesta,low

@@ -1,0 +1,11 @@
+activity,R,A,C,I
+"Definición de finalidad, usos prohibidos y condición de retiro",Responsable de producto,Dirección de Gestión de Riesgo Territorial,Asesoría legal; Representantes de personas afectadas,Equipo de datos; Analistas territoriales
+Calidad y privacidad de datos,Ingeniero de datos,Líder del equipo de datos,Científico de datos; Asesoría legal,Responsable de producto
+Entrenamiento y validación del modelo,Científico de datos,Líder del equipo de datos,Ingeniero de datos,Responsable de producto
+Auditoría de equidad y mitigación,Científico de datos,Dirección de Gestión de Riesgo Territorial,Asesoría legal; Representantes de personas afectadas,Analistas territoriales; Supervisor de analistas
+Decisión de despliegue (GO/REVIEW),Responsable de producto,Dirección de Gestión de Riesgo Territorial,Líder del equipo de datos; Asesoría legal,Analistas territoriales; Supervisor de analistas; Representantes de personas afectadas
+Despliegue y monitoreo de métricas y brechas,Ingeniero de ML,Líder del equipo de datos,Científico de datos,Responsable de producto; Dirección de Gestión de Riesgo Territorial
+Revisión humana de casos priorizados,Analistas territoriales,Supervisor de analistas,Científico de datos,Responsable de producto
+Atención de apelaciones,Supervisor independiente de apelaciones,Dirección de Gestión de Riesgo Territorial,Asesoría legal; Analistas territoriales,Personas afectadas
+Respuesta a incidentes,Ingeniero de ML; Científico de datos,Dirección de Gestión de Riesgo Territorial,Asesoría legal; Líder del equipo de datos,Analistas territoriales; Representantes de personas afectadas
+Suspensión o retiro del sistema,Responsable de producto,Dirección de Gestión de Riesgo Territorial,Líder del equipo de datos; Asesoría legal,Analistas territoriales; Personas afectadas

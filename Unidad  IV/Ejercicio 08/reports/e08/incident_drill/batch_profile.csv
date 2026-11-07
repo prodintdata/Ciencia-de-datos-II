@@ -1,0 +1,5 @@
+zone,n_batch,share_zero_reference,share_zero_batch,psi_previous_incidents
+Este,35,0.031,0.0,0.0957
+Norte,39,0.1121,0.0,0.2736
+Oeste,41,0.0517,1.0,8.2246
+Sur,45,0.0504,0.0222,0.3774
